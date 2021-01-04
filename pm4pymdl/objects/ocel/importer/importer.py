@@ -7,6 +7,9 @@ import dateutil
 from jsonschema import validate
 import jsonschema
 from datetime import datetime
+from backports.datetime_fromisoformat import MonkeyPatch
+MonkeyPatch.patch_fromisoformat()
+
 
 
 def validate_with_schema(file_path, schema_path):
